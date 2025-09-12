@@ -23,11 +23,50 @@
     })
 
     onMounted(async () => {
-        const { response } = await fetchingData({
-            url: '/api/zoom/meeting_summary'
-        })
-        data.value = response?.summaries || []
-        console.log('Fetched data:', response)
+        // const { response } = await fetchingData({
+        //     url: '/api/zoom/meeting_summary'
+        // })
+        // data.value = response?.summaries || []
+        data.value = [
+            {
+                "meeting_host_id": "O44k1ungRciP-ydyJg1TVw",
+                "meeting_host_email": "support@wexlerllc.com",
+                "meeting_uuid": "Lj3wLvfuRJymgUGpjMlhzg==",
+                "meeting_id": 81944047373,
+                "meeting_topic": "Wexler Team's Zoom Meeting",
+                "meeting_start_time": "2025-09-09T17:37:25Z",
+                "meeting_end_time": "2025-09-09T17:41:56Z",
+                "summary_start_time": "2025-09-09T17:39:28Z",
+                "summary_end_time": "2025-09-09T17:41:46Z",
+                "summary_created_time": "2025-09-09T17:37:25Z",
+                "summary_last_modified_time": "2025-09-09T19:12:05Z"
+            },
+            {
+                "meeting_host_id": "O44k1ungRciP-ydyJg1TVw",
+                "meeting_host_email": "support@wexlerllc.com",
+                "meeting_uuid": "hahqH0sHRl2BOXHHt9Z6FA==",
+                "meeting_id": 84829666483,
+                "meeting_topic": "Wexler Team's Zoom Meeting",
+                "meeting_start_time": "2025-09-05T10:15:38Z",
+                "meeting_end_time": "2025-09-05T10:16:00Z",
+                "summary_created_time": "2025-09-05T10:15:39Z",
+                "summary_last_modified_time": "2025-09-05T10:16:03Z"
+            },
+            {
+                "meeting_host_id": "O44k1ungRciP-ydyJg1TVw",
+                "meeting_host_email": "support@wexlerllc.com",
+                "meeting_uuid": "WLo4ucGtSpCSVcYX74JnwQ==",
+                "meeting_id": 89955740494,
+                "meeting_topic": "Wexler Team's Zoom Meeting",
+                "meeting_start_time": "2025-09-04T20:54:02Z",
+                "meeting_end_time": "2025-09-04T20:58:31Z",
+                "summary_start_time": "2025-09-04T20:54:54Z",
+                "summary_end_time": "2025-09-04T20:58:24Z",
+                "summary_created_time": "2025-09-04T20:54:04Z",
+                "summary_last_modified_time": "2025-09-04T22:28:41Z"
+            }
+        ]
+        // console.log('Fetched data:', response)
 
         isLoading.value = false
     })

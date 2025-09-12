@@ -1,19 +1,19 @@
 import axios from "axios";
 
 export default defineEventHandler(async (event) => {
-  // const config = useRuntimeConfig();
-  // const clientId = config.public.zoomClientId;
-  // const clientSecret = config.public.zoomClientSecret;
-  // const accountId = config.public.zoomAccountId;
-  // const authHeader = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
+  const config = useRuntimeConfig();
+  const clientId = config.public.zoomClientId;
+  const clientSecret = config.public.zoomClientSecret;
+  const accountId = config.public.zoomAccountId;
+  const authHeader = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
 
   try {
     const tokenRes = await axios.post(
-      `https://zoom.us/oauth/token?grant_type=account_credentials&account_id=8M8O0BDiSIiREvxn2NeQsg`,
+      `https://zoom.us/oauth/token?grant_type=account_credentials&account_id=${accountId}`,
       {},
       {
         headers: {
-          Authorization: `Basic NkdxODNmUXVSX2V4R0JKM0xoVWFoZzpLRnVGTG9sNnlCdWxuVW02VGtjU1dUeFF2QUd2WkRabA==`,
+          Authorization: `Basic ${authHeader}`,
           "Content-Type": "application/x-www-form-urlencoded",
         },
       }
