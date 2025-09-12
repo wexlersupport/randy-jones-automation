@@ -6,14 +6,34 @@ const toast = useToast()
 
 const open = ref(false)
 
-const links = [[{
-  label: 'Home',
-  icon: 'i-lucide-house',
-  to: '/',
+const links = [[
+// {
+//   label: 'Home',
+//   icon: 'i-lucide-house',
+//   to: '/',
+//   onSelect: () => {
+//     open.value = false
+//   }
+// },
+{
+  label: 'Zoom Meetings',
+  icon: 'i-lucide-video',
+  to: '/zoom-meetings',
+  slot: 'zoom-meetings-components' as const,
   onSelect: () => {
     open.value = false
   }
-}, {
+},
+{
+  label: 'For Follow Up',
+  icon: 'i-lucide-send',
+  to: '/inbox',
+  slot: 'for-follow-up-components' as const,
+  onSelect: () => {
+    open.value = false
+  }
+},
+{
   label: 'Inbox',
   icon: 'i-lucide-inbox',
   to: '/inbox',
@@ -29,48 +49,59 @@ const links = [[{
     open.value = false
   }
 }, {
-  label: 'Settings',
-  to: '/settings',
-  icon: 'i-lucide-settings',
-  defaultOpen: true,
-  type: 'trigger',
-  children: [{
-    label: 'General',
-    to: '/settings',
-    exact: true,
-    onSelect: () => {
-      open.value = false
-    }
-  }, {
-    label: 'Members',
-    to: '/settings/members',
-    onSelect: () => {
-      open.value = false
-    }
-  }, {
-    label: 'Notifications',
-    to: '/settings/notifications',
-    onSelect: () => {
-      open.value = false
-    }
-  }, {
-    label: 'Security',
-    to: '/settings/security',
-    onSelect: () => {
-      open.value = false
-    }
-  }]
-}], [{
+  label: 'Calendar',
+  icon: 'i-lucide-calendar',
+  to: '/calendar',
+  onSelect: () => {
+    open.value = false
+  }
+}
+
+// {
+//   label: 'Settings',
+//   to: '/settings',
+//   icon: 'i-lucide-settings',
+//   defaultOpen: true,
+//   type: 'trigger',
+//   children: [{
+//     label: 'General',
+//     to: '/settings',
+//     exact: true,
+//     onSelect: () => {
+//       open.value = false
+//     }
+//   }, {
+//     label: 'Members',
+//     to: '/settings/members',
+//     onSelect: () => {
+//       open.value = false
+//     }
+//   }, {
+//     label: 'Notifications',
+//     to: '/settings/notifications',
+//     onSelect: () => {
+//       open.value = false
+//     }
+//   }, {
+//     label: 'Security',
+//     to: '/settings/security',
+//     onSelect: () => {
+//       open.value = false
+//     }
+//   }]
+// }
+], [{
   label: 'Feedback',
   icon: 'i-lucide-message-circle',
-  to: 'https://github.com/nuxt-ui-templates/dashboard',
+  to: 'https://github.com/nuxt-ui-pro/dashboard',
   target: '_blank'
 }, {
   label: 'Help & Support',
   icon: 'i-lucide-info',
-  to: 'https://github.com/nuxt-ui-templates/dashboard',
+  to: 'https://github.com/nuxt/ui-pro',
   target: '_blank'
-}]] satisfies NavigationMenuItem[][]
+}]
+] satisfies NavigationMenuItem[][]
 
 const groups = computed(() => [{
   id: 'links',
