@@ -319,7 +319,7 @@
                 class="border rounded-md p-6 my-4 border-neutral-800"
             /> -->
 
-            <UTable
+            <!-- <UTable
                 ref="table"
                 v-model:column-visibility="columnVisibility"
                 v-model:row-selection="rowSelection"
@@ -356,7 +356,7 @@
                     @update:page="(p: number) => table?.tableApi?.setPageIndex(p - 1)"
                 />
                 </div>
-            </div>
+            </div> -->
         </template>
     </UDashboardPanel>
 </template>
