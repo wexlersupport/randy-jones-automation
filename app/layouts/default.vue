@@ -27,21 +27,22 @@ const links = [[
 {
   label: 'For Follow Up',
   icon: 'i-lucide-send',
-  to: '/inbox',
+  to: '/for-follow-up',
   slot: 'for-follow-up-components' as const,
   onSelect: () => {
     open.value = false
   }
 },
+// {
+//   label: 'Inbox',
+//   icon: 'i-lucide-inbox',
+//   to: '/inbox',
+//   badge: '4',
+//   onSelect: () => {
+//     open.value = false
+//   }
+// },
 {
-  label: 'Inbox',
-  icon: 'i-lucide-inbox',
-  to: '/inbox',
-  badge: '4',
-  onSelect: () => {
-    open.value = false
-  }
-}, {
   label: 'Customers',
   icon: 'i-lucide-users',
   to: '/customers',

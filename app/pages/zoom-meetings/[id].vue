@@ -118,7 +118,7 @@
         const response = await fetch('/api/pipedrive/add_note', {
             method: 'POST',
             body: JSON.stringify({
-                ai_summary_overview: form.value.summary_overview,
+                ai_summary_overview: form.value.ai_summary_overview,
                 person_id: 1,
                 org_id: 1
             })

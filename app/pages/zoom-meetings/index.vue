@@ -251,11 +251,11 @@
 </script>
 
 <template>
-    <UiAppLoading
+    <!-- <UiAppLoading
         v-if="isLoading"
         class="w-full border rounded-md p-6 my-4 border-neutral-800"
-    />
-    <UDashboardPanel v-if="!isLoading" id="material-index">
+    /> -->
+    <UDashboardPanel id="material-index">
         <template #header>
             <UDashboardNavbar title="Material List">
                 <template #leading>
@@ -314,13 +314,12 @@
                 </div>
             </div>
 
-            <UiAppLoading
+            <!-- <UiAppLoading
                 v-if="isLoading"
                 class="border rounded-md p-6 my-4 border-neutral-800"
-            />
+            /> -->
 
             <UTable
-                v-if="!isLoading"
                 ref="table"
                 v-model:column-visibility="columnVisibility"
                 v-model:row-selection="rowSelection"
